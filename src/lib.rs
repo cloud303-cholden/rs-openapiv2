@@ -101,7 +101,7 @@ pub enum SchemaOrReference {
 pub struct Parameter {
     pub name: String,
     #[serde(rename="in")]
-    pub input: String,
+    pub in_: ParameterType,
     pub description: Option<String>,
     pub required: Option<bool>,
     #[serde(rename="type")]
@@ -233,7 +233,7 @@ pub enum ParameterType {
     Query,
     Header,
     Body,
-    Form,
+    FormData,
 }
 
 #[derive(Debug, Deserialize)]
